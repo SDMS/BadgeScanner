@@ -43,6 +43,10 @@ function postToGoogle() {
   
   $.ajax({
     url: "https://docs.google.com/a/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse",
+    beforeSend: function (xhr) {
+          xhr.setRequestHeader('Access-Control-Allow-Origin', 'chrome-extension://EXTENSION_ID');
+          xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST, PUT');
+        },
     data: {
       'entry.1826631571': timeIn,
       'entry.846193839': sid,
