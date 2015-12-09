@@ -17,17 +17,6 @@ var lastName = "Student";
 var grade = 8;
 var team = "Magenta";
 
-
-var callback = function(e){
-  e.preventDefault();    //stop form from submitting
-}
-
-if(form.addEventListener){
-    form.addEventListener("submit", callback, false);  //Modern browsers
-}else if(form.attachEvent){
-    form.attachEvent('onsubmit', callback);            //Old IE
-}
-
 form.innerHTML = [
 "<input id='entry_1826631571' name = 'entry.1826631571' value = '" + timeIn + "'/>",
 "<input id='entry_846193839' name = 'entry.846193839' value = '" + sid + "'/>",
