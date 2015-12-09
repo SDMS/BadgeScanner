@@ -9,6 +9,7 @@ var form = document.createElement("form");
 form.action = "https://docs.google.com/a/yourdomain.com/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
 form.method = "POST";
 form.id="ss-form";
+form.target = "hidden";
 var timeIn = new Date();
 var sid = 123456;
 var firstName = "Test";
@@ -25,7 +26,7 @@ form.innerHTML = [
 "<input id='entry_1105692196' name = 'entry.1105692196' value = '" + team + "'/>"
 ].join("");
 
-form.submit = function(){ console.log('boop'); return 0;}
+//form.submit = function(){ console.log('boop'); return 0;}
 
 form.submit();
 console.log('asdf');
