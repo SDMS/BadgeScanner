@@ -1,4 +1,7 @@
 <html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
 <body>
 <script type="text/javascript">
 var form = document.createElement("form");
@@ -22,10 +25,11 @@ form.innerHTML = [
 "<input id='entry_1105692196' name = 'entry.1105692196' value = '" + team + "'/>"
 ].join("");
 
-form.submit();
+//form.submit();
 
 alert(form.innerHTML);
 
+return false;
 </script>
 
 </body>
