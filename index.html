@@ -44,12 +44,12 @@ function postToGoogle() {
   $.ajax({
     url: "https://docs.google.com/a/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse",
     data: {
-      'entry.1826631571' = timeIn,
-      'entry.846193839' = sid,
-      'entry.1810641923' = firstName,
-      'entry.2112623826' = lastName,
-      'entry.421600000' = grade,
-      'entry.1105692196' = team },
+      'entry.1826631571': timeIn,
+      'entry.846193839': sid,
+      'entry.1810641923': firstName,
+      'entry.2112623826': lastName,
+      'entry.421600000': grade,
+      'entry.1105692196': team },
       type: "POST",
       dataType: "xml",
       statusCode: {
