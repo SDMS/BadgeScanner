@@ -1,8 +1,8 @@
 google.load('visualization', 1.0);
-
-var link = "https://docs.google.com/a/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
-
+var database = "https://docs.google.com/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/";
+var formlink = "https://docs.google.com/forms/d/1wCoPHuN6o0bdXJRXcZ_fINKEUSABzQcgPnSDg4-KH9Y/formResponse";
 function getStudent(){
+
   var id = $("#sid").val();
   console.log(id);
 
@@ -10,7 +10,7 @@ function getStudent(){
     if(id.charAt(0) == 'P') id = id.substring(1);
   }
   var opts = {sendMethod: 'auto'};
-  var query = new google.visualization.Query(link, opts);
+  var query = new google.visualization.Query(database, opts);
   query.setQuery('select * where A =' + id);
   query.send(handleQueryResponse);
 }
@@ -45,7 +45,7 @@ function handleQueryResponse(response){
 function postToForm(student){
   var form = $("form");
 
-  form.action = link;
+  form.action = formlink;
   form.method = "POST";
   form.id="ss-form";
   form.target = "my_iframe";
