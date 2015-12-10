@@ -13,6 +13,7 @@ function getStudent(){
   var query = new google.visualization.Query(database, opts);
   query.setQuery('select * where A =' + id);
   query.send(handleQueryResponse);
+  console.log('sent');
 }
 
 function handleQueryResponse(response){
