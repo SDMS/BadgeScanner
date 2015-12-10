@@ -10,7 +10,6 @@ function getStudent(){
     if(id.charAt(0) == 'P') id = id.substring(1);
   }
 
-  query.send(handleQueryResponse);
   var opts = {sendMethod: 'auto'};
   var query = new google.visualization.Query('https://docs.google.com/a/wethersfield.me/spreadsheets/d/1c5Tvi0hvSbrYQhZGgQN9nJAsdQZtM7R-dnVS4gVuuTM/edit#gid=801796888', opts);
   query.setQuery('select * where A =' + id);
