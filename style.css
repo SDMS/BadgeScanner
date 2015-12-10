@@ -14,8 +14,8 @@ body {
   user-select: none;
 }
 
-#my-iframe {
-  display: hidden;
+#my_iframe {
+  display: none;
 }
 
 #top-bar {

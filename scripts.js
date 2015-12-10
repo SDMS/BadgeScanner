@@ -1,6 +1,7 @@
 google.load('visualization', 1.0);
 var database = "https://docs.google.com/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/";
-var formlink = "https://docs.google.com/forms/d/1wCoPHuN6o0bdXJRXcZ_fINKEUSABzQcgPnSDg4-KH9Y/formResponse";
+var formlink = "https://docs.google.com/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
+
 function getStudent(){
 
   var id = $("#sid").val();
