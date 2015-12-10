@@ -16,6 +16,7 @@ function getStudent(){
 }
 
 function handleQueryResponse(response){
+  console.log("bloop");
   if(response.isError()){
     console.log('Error: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
@@ -31,16 +32,15 @@ function handleQueryResponse(response){
     return;
   }
 
-    var student = {
+  var student = {
       sid: data.getValue(0,0),
       firstName: data.getValue(0,1),
       lastName: data.getValue(0,2),
       grade: data.getValue(0,3),
       team: data.getValue(0,4)
   }
-    getStudent()
-    postToForm(student);
-    socket.emit('sign in', student);
+
+  postToForm(student);
 }
 
 function postToForm(student){
