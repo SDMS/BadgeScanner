@@ -47,6 +47,12 @@ function handleQueryResponse(response){
 
   $("#sid").val("");
 
+  $("#student").attr("data-sid", student.sid);
+  $("#student #first-name").html(student.firstName);
+  $("#student #last-name").html(student.lastName);
+  $("#student #grade").html(student.grade);
+  $("#student #team").html(student.team);
+
   alert(JSON.stringify(student));
 }
 
@@ -86,5 +92,13 @@ function postToGoogle() {
 <input id='sid' pattern="[0-9]*" type='text' autofocus onBlur='this.focus()'>
 <button onclick="getStudent()">Get Student</button>
 <button onclick="postToGoogle()">Post To Google</button>
+
+<ul data-sid="0" id="student">
+  <li id="first-name"></li>
+  <li id="last-name"></li>
+  <li id="grade"></li>
+  <li id="team"></li>
+</ul>
+
 </body>
 </html>
