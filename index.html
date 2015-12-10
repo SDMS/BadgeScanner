@@ -2,17 +2,38 @@
 <head>
   <script type='text/javascript' src="https://www.google.com/jsapi"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script type='text/javascript' src="./scripts.js"></script>
-  <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-  <iframe name="my_iframe" src=""></iframe>
-  <div id='top-bar'>
-    <div class='id-field'>
-      Student ID: <input id='sid' pattern="[0-9]*" type='text' autofocus onBlur='this.focus()'>
-      <button class='button in' onclick='getStudent()'>Submit</button>     
-    </div>
-     <div class='instructions'>Scan or type your Student ID to sign in.</div>
-  </div> 
+<script type="text/javascript">
+var form = document.createElement("form");
+
+form.action = "https://docs.google.com/a/yourdomain.com/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
+form.method = "POST";
+form.id="ss-form";
+form.target = "my_iframe";
+var timeIn = new Date();
+var sid = 123456;
+var firstName = "Test";
+var lastName = "Student";
+var grade = 8;
+var team = "Magenta";
+
+form.innerHTML = [
+"<input id='entry_1826631571' name = 'entry.1826631571' value = '" + timeIn + "'/>",
+"<input id='entry_846193839' name = 'entry.846193839' value = '" + sid + "'/>",
+"<input id='entry_1810641923' name = 'entry.1810641923' value = '" + firstName + "'/>",
+"<input id='entry_2112623826' name = 'entry.2112623826' value = '" + lastName + "'/>",
+"<input id='entry_421600000' name = 'entry.421600000' value = '" + grade + "'/>",
+"<input id='entry_1105692196' name = 'entry.1105692196' value = '" + team + "'/>"
+].join("");
+
+//form.submit = function(){ console.log('boop'); return 0;}
+
+form.submit();
+console.log('asdf');
+alert(form.innerHTML);
+
+</script>
+<iframe name="my_iframe" src="www.google.com"></iframe>
 </body>
 </html>
