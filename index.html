@@ -8,16 +8,17 @@
 <body>
 
 <iframe name="my_iframe" src=""></iframe>
-<h1></h1>
-<input id='sid' pattern="[0-9]*" type='text' autofocus onBlur='this.focus()'>
-<button onclick="getStudent()">Submit</button>
+<div id="container">
+  <h1 id="title"></h1>
+  <input id='sid' pattern="[0-9]*" type='text' autofocus onBlur='this.focus()'>
+  <button onclick="getStudent()">Submit</button>
 
-<ul data-sid="0" id="student">
-  <li id="first-name"></li>
-  <li id="last-name"></li>
-  <li id="grade"></li>
-  <li id="team"></li>
-</ul>
-
+  <ul data-sid="0" id="student">
+    <li id="first-name"></li>
+    <li id="last-name"></li><br>
+    <li id="grade"></li>
+    <li id="team"></li>
+  </ul>
+</div>
 </body>
 </html>

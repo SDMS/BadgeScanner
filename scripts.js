@@ -11,6 +11,17 @@ var formInfo = {
   "grade": "entry.421600000",
   "team": "entry.1105692196"
 }
+
+$( document ).ready(function() {
+  $("#title").html(eventName);
+  $("#sid").keyup(function (e) {
+    if (e.keyCode === 13) {
+       getStudent();
+    }
+  });
+
+});
+
 function getStudent(){
 
   var id = $("#sid").val();
@@ -53,12 +64,6 @@ function handleQueryResponse(response){
 
   $("#sid").val("");
 
-  $("#student").attr("data-sid", student.sid);
-  $("#student #first-name").html(student.firstName);
-  $("#student #last-name").html(student.lastName);
-  $("#student #grade").html(student.grade);
-  $("#student #team").html(student.team);
-
   postToGoogle(student);
 }
 
@@ -81,6 +86,22 @@ function postToGoogle(student) {
   ].join("");
 
   form.submit();
-  console.log('asdf');
-  alert(form.innerHTML);
+  addToPage(student);
+}
+
+function addToPage(student){
+  $("#student").attr("data-sid", student.sid);
+  $("#student #first-name").html(student.firstName);
+  $("#student #last-name").html(student.lastName);
+  $("#student #grade").html(student.grade);
+  $("#student #team").html(student.team);
+  setTimeout(removeFromPage, 8000);
+}
+
+function removeFromPage(){
+  $("#student").attr("data-sid", 0);
+  $("#student #first-name").html("");
+  $("#student #last-name").html("");
+  $("#student #grade").html("");
+  $("#student #team").html("");
 }
