@@ -1,6 +1,4 @@
 google.load('visualization', 1.0);
-var database = "https://docs.google.com/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/";
-var formlink = "https://docs.google.com/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
 
 function getStudent(){
 
@@ -42,24 +40,26 @@ function handleQueryResponse(response){
       team: data.getValue(0,4)
   }
 
-  postToForm(student);
+  $("#sid").val("");
+
+  $("#student").attr("data-sid", student.sid);
+  $("#student #first-name").html(student.firstName);
+  $("#student #last-name").html(student.lastName);
+  $("#student #grade").html(student.grade);
+  $("#student #team").html(student.team);
+
+  postToGoogle(student);
 }
 
-function postToForm(student){
-  var form = $("form");
+function postToGoogle(student) {
+  var form = document.createElement("form");
 
   form.action = "https://docs.google.com/a/wethersfield.me/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
-  console.log(form.action);
   form.method = "POST";
   form.id="ss-form";
   form.target = "my_iframe";
   var timeIn = new Date();
-/*  var sid = 123456;
-  var firstName = "Test";
-  var lastName = "Student";
-  var grade = 8;
-  var team = "Magenta";
-*/
+
   form.innerHTML = [
     "<input id='entry_1826631571' name = 'entry.1826631571' value = '" + timeIn + "'/>",
     "<input id='entry_846193839' name = 'entry.846193839' value = '" + student.sid + "'/>",
@@ -70,5 +70,6 @@ function postToForm(student){
   ].join("");
 
   form.submit();
+  console.log('asdf');
   alert(form.innerHTML);
 }
