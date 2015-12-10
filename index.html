@@ -3,6 +3,51 @@
   <script type='text/javascript' src="https://www.google.com/jsapi"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
+function getStudent(){
+
+  var id = $("#sid").val();
+  console.log(id);
+
+  if(typeof id == 'string') {
+    if(id.charAt(0) == 'P') id = id.substring(1);
+  }
+
+  var opts = {sendMethod: 'auto'};
+  var query = new google.visualization.Query('https://docs.google.com/a/wethersfield.me/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/edit', opts);
+  query.setQuery('select * where A =' + id);
+  query.send(handleQueryResponse);
+  console.log('sent');
+}
+
+function handleQueryResponse(response){
+  if(response.isError()){
+    console.log('Error: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+  var data = response.getDataTable();
+  if(data.getNumberOfRows() > 1) {
+    alert("Please ask a teacher for help.");
+    $("#sid").val('');
+    return;
+  }else if(data.getNumberOfRows() < 1){
+    alert("Did you type your ID in correctly?");
+    $("#sid").val('');
+    return;
+  }
+
+  var student = {
+      sid: data.getValue(0,0),
+      firstName: data.getValue(0,1),
+      lastName: data.getValue(0,2),
+      grade: data.getValue(0,3),
+      team: data.getValue(0,4)
+  }
+
+  $("#sid").val("");
+
+  alert(student);
+}
+
 function postToGoogle() {
   var form = document.createElement("form");
 
@@ -35,6 +80,9 @@ function postToGoogle() {
 <body>
 
 <iframe name="my_iframe" src=""></iframe>
-<button onclick="postToGoogle()">ASDF</button>
+
+<input id='sid' pattern="[0-9]*" type='text' autofocus onBlur='this.focus()'>
+<button onclick="askGoogle()">Ask Google</button>
+<button onclick="postToGoogle()">Post To Google</button>
 </body>
 </html>
