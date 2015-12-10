@@ -1,6 +1,6 @@
 google.load('visualization', 1.0);
 
-var link = "https://docs.google.com/a/yourdomain.com/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
+var link = "https://docs.google.com/a/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
 
 function getStudent(){
   var id = $("#sid").val();
@@ -16,7 +16,6 @@ function getStudent(){
 }
 
 function handleQueryResponse(response){
-  console.log("bloop");
   if(response.isError()){
     console.log('Error: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;

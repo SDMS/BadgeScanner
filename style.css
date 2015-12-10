@@ -15,7 +15,7 @@ body {
 }
 
 #my-iframe {
-  display: none;
+  display: hidden;
 }
 
 #top-bar {
