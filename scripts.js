@@ -48,7 +48,7 @@ function handleQueryResponse(response){
 function postToForm(student){
   var form = $("form");
 
-  form.action = formlink;
+  form.action = "https://docs.google.com/a/wethersfield.me/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
   console.log(form.action);
   form.method = "POST";
   form.id="ss-form";
