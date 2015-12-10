@@ -1,3 +1,5 @@
+google.load('visualization', 1.0);
+
 var link = "https://docs.google.com/a/yourdomain.com/forms/d/1jKSxKrEwKGYr5XmJ6RFmn6WgZNCHxtoqHSP2FPMGBVw/formResponse";
 
 function getStudent(){
