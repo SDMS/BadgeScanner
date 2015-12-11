@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Muli);
+@import url(https://fonts.googleapis.com/css?family=Slabo+13px);
+
+body {
+  font-family: 'Muli', sans-serif;
+  font-size: 25px;
+}
+
+iframe {
+  display: none;
+}
+
+#container {
+  text-align: center;
+}
+
+h1 {
+  font-family:'Slabo 13px', serif;
+  font-size: 2em;
+}
+
+ul {
+  margin: 20vh 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+#first-name, #last-name {
+  font-size: 3em;
+}
