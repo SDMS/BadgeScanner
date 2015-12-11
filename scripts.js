@@ -1,9 +1,9 @@
 google.load('visualization', 1.0);
 
-var eventName = "Drama Club Sign In"
+var eventName = "Template (this doesn't work)"
 var database = "https://docs.google.com/a/wethersfield.me/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/edit";
 var formInfo = {
-  "link": "https://docs.google.com/a/wethersfield.me/forms/d/1J232R3D0ycbSWN1P3m8Spc00P_ArerYr8zcdBEVNN1U/formResponse",
+  "link": "https://docs.google.com/a/wethersfield.me/forms/d/<docid>/formResponse",
   "timeIn": "entry.1826631571",
   "sid": "entry.846193839", 
   "firstName": "entry.1810641923", 
