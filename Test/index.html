@@ -1,0 +1,24 @@
+<html>
+<head>
+  <script type='text/javascript' src="https://www.google.com/jsapi"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./scripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+<iframe name="my_iframe" src=""></iframe>
+<div id="container">
+  <h1 id="title"></h1>
+  <input id='sid' pattern="[0-9]*" type='text' autofocus onBlur='this.focus()'>
+  <button onclick="getStudent()">Submit</button>
+
+  <ul data-sid="0" id="student">
+    <li id="first-name"></li>
+    <li id="last-name"></li><br>
+    <li id="grade"></li>
+    <li id="team"></li>
+  </ul>
+</div>
+</body>
+</html>
