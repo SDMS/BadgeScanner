@@ -39,6 +39,7 @@ function getStudent(){
 }
 
 function handleQueryResponse(response){
+  console.log("received response");
   if(response.isError()){
     console.log('Error: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
@@ -63,11 +64,12 @@ function handleQueryResponse(response){
   }
 
   $("#sid").val("");
-
+  console.log(student);
   postToGoogle(student);
 }
 
 function postToGoogle(student) {
+  console.log("posting student...");
   var form = document.createElement("form");
 
   form.action = formInfo.link;
