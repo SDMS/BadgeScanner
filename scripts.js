@@ -1,5 +1,6 @@
 google.load('visualization', 1.0);
 
+var timeout;
 var eventName = "Template (this doesn't work)"
 var database = "https://docs.google.com/a/wethersfield.me/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/edit";
 var formInfo = {
@@ -95,7 +96,8 @@ function addToPage(student){
   $("#student #last-name").html(student.lastName);
   $("#student #grade").html(student.grade);
   $("#student #team").html(student.team);
-  setTimeout(removeFromPage, 8000);
+  clearTimeout(timeout);
+  timeout = setTimeout(removeFromPage, 8000);
 }
 
 function removeFromPage(){
