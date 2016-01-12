@@ -1,6 +1,6 @@
 var eventName = "Dance Ticket Confirmation Page"
 var databaseInfo = {
-  "link": "https://docs.google.com/a/wethersfield.me/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/edit",
+  "link": "https://docs.google.com/a/wethersfield.me/spreadsheets/d/1ijTPbVQm7pjvQNg1ptjVuS3ycdkDgCU4eBWXnnrj4Ns/edit",
   "column": "C"
 }
 var formInfo = {
