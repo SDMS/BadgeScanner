@@ -1,5 +1,8 @@
 var eventName = "Drama Club Sign In"
-var database = "https://docs.google.com/a/wethersfield.me/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/edit";
+var databaseInfo = {
+  "link": "https://docs.google.com/a/wethersfield.me/spreadsheets/d/1NcGy2e_nzsDuX-BkHcw0UlzSTdIkbnn0ONIN6stE9Ag/edit",
+  "column": "A"
+}
 var formInfo = {
   "link": "https://docs.google.com/a/wethersfield.me/forms/d/1J232R3D0ycbSWN1P3m8Spc00P_ArerYr8zcdBEVNN1U/formResponse",
   "timeIn": "entry.1826631571",

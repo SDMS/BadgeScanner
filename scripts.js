@@ -22,8 +22,8 @@ function getStudent(){
   }
 
   var opts = {sendMethod: 'auto'};
-  var query = new google.visualization.Query(database, opts);
-  query.setQuery('select * where A =' + id);
+  var query = new google.visualization.Query(databaseInfo.link, opts);
+  query.setQuery('select * where ' + databaseInfo.column + ' =' + id);
   query.send(handleQueryResponse);
   console.log('sent');
 }
