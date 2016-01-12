@@ -6,6 +6,7 @@ $( document ).ready(function() {
   $("#title").html(eventName);
   $("#sid").keyup(function (e) {
     if (e.keyCode === 13) {
+        removeFromPage();
        getStudent();
     }
   });
