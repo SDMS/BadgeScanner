@@ -27,6 +27,15 @@ function getStudent(){
   query.setQuery('select * where ' + databaseInfo.column + ' =' + id);
   query.send(handleQueryResponse);
   console.log('sent');
+  $("#sid").val("");
+  var loading = {
+      sid: "1",
+      firstName: "Loading...",
+      lastName: "",
+      grade: "",
+      team: ""
+  }
+  addToPage(loading);
   $("img").remove();
 }
 
@@ -53,8 +62,6 @@ function handleQueryResponse(response){
       grade: data.getValue(0,3),
       team: data.getValue(0,4)
   }
-
-  $("#sid").val("");
 
   postToGoogle(student);
 }
