@@ -53,6 +53,7 @@ function handleQueryResponse(response){
     return;
   }else if(data.getNumberOfRows() < 1){
     alert("Did you type your ID in correctly?");
+    removeFromPage();
     $("#sid").val('');
     return;
   }
