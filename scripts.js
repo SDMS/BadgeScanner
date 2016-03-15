@@ -27,7 +27,6 @@ function getStudent(){
   query.setQuery('select * where ' + databaseInfo.column + ' =' + id);
   query.send(handleQueryResponse);
   console.log('sent');
-  $("#sid").val("");
   var loading = {
       sid: "1",
       firstName: "Loading...",
@@ -35,11 +34,13 @@ function getStudent(){
       grade: "",
       team: ""
   }
-  addToPage(loading);
+  addToPage(loading, 999999999);
+  $("#sid").val("");
   $("img").remove();
 }
 
 function handleQueryResponse(response){
+  console.log("recieving response");
   if(response.isError()){
     console.log('Error: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
@@ -47,6 +48,7 @@ function handleQueryResponse(response){
   var data = response.getDataTable();
   if(data.getNumberOfRows() > 1) {
     alert("Please ask a teacher for help.");
+    removeFromPage();
     $("#sid").val('');
     return;
   }else if(data.getNumberOfRows() < 1){
@@ -85,17 +87,17 @@ function postToGoogle(student) {
   ].join("");
 
   form.submit();
-  addToPage(student);
+  addToPage(student, 8000);
 }
 
-function addToPage(student){
+function addToPage(student, delay){
   $("#student").attr("data-sid", student.sid);
   $("#student #first-name").html(student.firstName);
   $("#student #last-name").html(student.lastName);
   $("#student #grade").html(student.grade);
   $("#student #team").html(student.team);
   clearTimeout(timeout);
-  timeout = setTimeout(removeFromPage, 8000);
+  timeout = setTimeout(removeFromPage, delay);
 }
 
 function removeFromPage(){
@@ -104,4 +106,5 @@ function removeFromPage(){
   $("#student #last-name").html("");
   $("#student #grade").html("");
   $("#student #team").html("");
+  clearTimeout(timeout);
 }
