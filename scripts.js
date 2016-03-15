@@ -27,7 +27,7 @@ function getStudent(){
   query.setQuery('select * where ' + databaseInfo.column + ' =' + id);
   query.send(handleQueryResponse);
   console.log('sent');
-  console.log($("img"));
+  $("img").remove();
 }
 
 function handleQueryResponse(response){
